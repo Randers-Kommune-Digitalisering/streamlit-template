@@ -1,5 +1,4 @@
 import pandas as pd
-import altair as alt
 import streamlit as st
 
 pd.set_option('display.max_columns', None)
