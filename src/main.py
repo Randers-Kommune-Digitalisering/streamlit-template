@@ -7,8 +7,8 @@ pd.set_option('display.max_columns', None)
 st.set_page_config(page_title="Streamlit-Template", layout="wide")
 st.title("Streamlit-Template")
 chart_tab, csv_tab = st.tabs(
-        ["Template til grafer", "Fra CSV til Charts"]
-    )
+    ["Template til grafer", "Fra CSV til Charts"]
+)
 
 with chart_tab:
     st.write("Template til at lave grafer i Streamlit")
@@ -60,7 +60,7 @@ with csv_tab:
             x=alt.X('Device', title='Device'),
             y=alt.Y('Count', title='Number of devices'),
             color=alt.Color('Device'),
-            tooltip=[alt.Tooltip('Device'), alt.Tooltip('Count')]  
+            tooltip=[alt.Tooltip('Device'), alt.Tooltip('Count')]
         ).properties(
             width=600, height=400)
         st.altair_chart(device_chart, use_container_width=True)
