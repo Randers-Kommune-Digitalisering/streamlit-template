@@ -19,7 +19,7 @@ with chart_tab:
         'Product B': np.random.randint(30, 80, size=100),
         'Product C': np.random.randint(20, 70, size=100)
     })
-
+    
     data_long = data.melt('Day', var_name='Product', value_name='Sales')
 
     line_chart = alt.Chart(data_long).mark_line().encode(
