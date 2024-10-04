@@ -8,8 +8,8 @@ ENV USER_ID=11001
 ENV PORT=8080
 
 # Add user
-RUN addgroup --gid $GROUP_ID $GROUP_NAME && \
-    adduser $USER_ID -u $USER_ID -D -G $GROUP_NAME -h $HOME
+RUN if ! getent group src; then addgroup --gid 11000 src; fi && \
+    adduser $USER_ID -u USER_ID -D -G src -h /src
 
 # Install packages
 RUN apt-get update && apt-get install --yes --no-install-recommends build-essential libmariadb-dev libpq-dev
