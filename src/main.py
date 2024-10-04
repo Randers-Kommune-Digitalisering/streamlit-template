@@ -3,6 +3,11 @@ import streamlit as st
 import numpy as np
 import altair as alt
 
+# from utils.database import DatabaseClient # Uncomment when using database
+# from utils.config import DB_HOST, DB_USER, DB_PASS, DB_NAME # Uncomment when using database
+
+# db_client = DatabaseClient(db_type="mssql" ,database=DB_NAME, username=DB_USER, password=DB_PASS, host=DB_HOST) # Uncomment when using database
+
 pd.set_option('display.max_columns', None)
 st.set_page_config(page_title="Streamlit-Template", layout="wide")
 st.title("Streamlit-Template")
@@ -19,7 +24,7 @@ with chart_tab:
         'Product B': np.random.randint(30, 80, size=100),
         'Product C': np.random.randint(20, 70, size=100)
     })
-    
+
     data_long = data.melt('Day', var_name='Product', value_name='Sales')
 
     line_chart = alt.Chart(data_long).mark_line().encode(
