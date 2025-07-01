@@ -21,7 +21,7 @@ def get_template_overview():
             with col1:
                 ui.metric_card(title="Template Item 1", description="Template Item 1 beskrivelse")
             with col2:
-                ui.metric_card(title="Template Item 2",  description="Template Item 2 beskrivelse")
+                ui.metric_card(title="Template Item 2", description="Template Item 2 beskrivelse")
             with col3:
                 ui.metric_card(title="Template Item 3", description="Template Item 3 beskrivelse")
 
